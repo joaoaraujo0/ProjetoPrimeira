@@ -1,0 +1,538 @@
+/* Link da CDN do Googlefont Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}   
+.sidebar{
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background: #7190f1;
+  transition: all 0.5s ease;
+}
+.sidebar.active{
+  width: 60px;
+}
+.sidebar .logo-details{
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i{
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 60px;
+  text-align: center
+}
+
+.sidebar .logo-details .logo-img
+{
+    width: 2%;
+    position: fixed;
+    margin-left: 2.5vh;
+}
+
+.btncriar
+{ 
+  position: relative;
+  background-color: #0ae47d;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+
+.btncriar:hover
+{
+  box-shadow: 0px 15px 20px #0ae47e76;
+  transform: translateY(-5px);
+}
+
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  margin-left: 14vh;
+  
+}
+.sidebar .nav-links{
+  margin-top: 10px;
+  
+
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  height: 50px;
+
+}
+.sidebar .nav-links li a{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  
+}
+.sidebar .nav-links li a.active{
+  background: #BCCAF4;
+ 
+}
+.sidebar .nav-links li a:hover{
+  background: #BCCAF4;
+  padding: 10px;
+  
+}
+.sidebar .nav-links li i{
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  
+}
+.sidebar .nav-links li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  
+}
+
+
+ /* Botão suspenso */
+.dropbtn 
+{
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 10px;
+  transition: all 0.5s;
+
+}
+
+.dropbtn2
+{
+  background-color: #046337;
+  width: 10vh;
+  height: 10vh;
+}
+
+/* Botão suspenso ao passar o mouse & focar */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #dfdfdf;
+}
+
+/* O contêiner <div> - necessário para posicionar o conteúdo suspenso */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Conteúdo suspenso (oculto por padrão) */
+.dropdown-content {
+  display: none;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #dfdfdf;;
+  min-width: 100%;
+  z-index: 1;
+}
+
+/* Links dentro do menu suspenso*/
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  transition: all 0.3s;
+
+}
+
+/* Alterar a cor dos links suspensos ao passar o mouse */
+.dropdown-content a:hover {
+  background-color: #0ae47d;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Mostre o menu suspenso (use JS para adicionar esta classe ao contêiner .dropdown-content quando o usuário clicar no botão suspenso) */
+.show {display:block;} 
+
+.sidebar .nav-links .log_out{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.home-section{
+  position: relative;
+  background-color: rgb(243, 243, 243);
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+
+}
+.sidebar.active ~ .home-section{
+  width: calc(100% - 60px);
+  left: 60px;
+  
+}
+.home-section nav{
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around; /*aqui*/
+
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .home-section nav{
+  left: 60px;
+  width: calc(100% - 60px);
+}
+.home-section nav .sidebar-button{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+nav .sidebar-button i{
+  font-size: 35px;
+  margin-right: 10px;
+}
+.home-section nav .search-box{
+  position: relative;
+  height: 50px;
+  max-width: 550px;
+  width: 100%;
+  margin: 0 20px;
+}
+
+nav .search-box
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+nav .search-box input{
+  height: 90%;
+  width: 80%;
+  outline: none;
+  background: #ffffff;
+  border: 1px solid rgb(138, 138, 138);
+  border-radius: 30px;
+  font-size: 18px;
+  padding: 0 15px;
+}
+nav .search-box .bx-search{
+  cursor: pointer;
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  background: #7190f1;
+  border-radius: 50px;
+  right: 116px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.4 ease;
+}
+
+nav .profile-details img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+nav .profile-details .admin_name{
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+nav .profile-details i{
+  font-size: 25px;
+  color: #333;
+}
+.home-section .home-content{
+  position: relative;
+  padding-top: 104px;
+}
+.home-content .overview-boxes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+.overview-boxes .box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 15px);
+  background: rgb(255, 255, 255);
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.overview-boxes .box-topic{
+  font-size: 20px;
+  font-weight: 500;
+}
+.home-content .box .number{
+  display: inline-block;
+  font-size: 35px;
+  margin-top: -6px;
+  font-weight: 500;
+}
+.home-content .box .indicator{
+  display: flex;
+  align-items: center;
+}
+
+.pub
+{
+  position: relative;
+}
+
+.cont-pub
+{
+  width: 180vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 180%);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.175);
+  background-color: transparent;
+}
+
+.cont-pub > div > h4
+{
+  padding-top: 3vh;
+  height: 10vh;
+  background-color: #7191f1d1;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-weight: 600;
+  font-size: 1em;
+  border-top: 1px solid #c6c6c6;
+  border-left: 1px solid #c6c6c6;
+  border-right: 1px solid #c6c6c6;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.3s;
+  
+}
+
+.cont-pub > div > h4:hover
+{
+  background-color: rgba(71, 109, 221, 0.82);
+}
+
+.cont-pub > div > p
+{
+  padding-top: 2vh;
+  padding-left: 10vh;
+  height: 8vh;
+  border-left: 1px solid #c6c6c6;
+  border-right: 1px solid #c6c6c6;
+  color: rgb(42, 42, 42);
+  font-size: 0.85em;
+  font-weight: 400;
+  border-bottom: 1px solid #c6c6c6;
+  transition: all 0.3s;
+}
+
+.cont-pub > div > p:hover, .cont-pub > p:hover
+{
+  background-color: #e6e6e6;
+}
+
+.cont-pub > p
+{
+  height: 6vh;
+  font-size: 0.8em;
+  text-align: left;
+  padding-top: 1.1vh;
+  padding-left: 5vh;
+  padding-right: 0;
+  background-color: transparent;
+  color: rgb(85, 85, 85);
+  border-radius: 0 0 10px 10px;
+  border-left: 1px solid #c6c6c6;
+  border-right: 1px solid #c6c6c6;
+  border-bottom: 1px solid #c6c6c6;
+  transition: all 0.3s;
+}
+
+.cont-pub > div > p > a
+{
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  padding: 3px;
+  transition: all 0.3s;
+  border-radius: 3px;
+  font-size: 1em;
+}
+
+.cont-pub > div > p > a:hover
+{
+  background-color: rgb(195, 195, 195);
+}
+
+
+
+
+.cont-pub > p > span
+{
+  align-items: center;
+  background-color: #7191f1d1;
+  padding: 3px 10px;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-style: italic;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.cont-pub > p > span:hover
+{
+  background-color: #a1b6f5d1
+}
+
+.cont-pub > p > label
+{
+  font-weight: 500;
+  font-size: 1.1em;
+  margin-left: 80vh;
+}
+
+
+
+/* Consulta de mídia responsiva */
+@media (max-width: 1240px) {
+
+
+  .sidebar{
+    width: 60px;
+  }
+  .sidebar.active{
+    width: 220px;
+  }
+  .home-section{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .home-section{
+    /* width: calc(100% - 220px); */
+    overflow: hidden;
+    left: 220px;
+  }
+  .home-section nav{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .home-section nav{
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+}
+@media (max-width: 1150px) {
+  .home-content .sales-boxes{
+    flex-direction: column;
+  }
+  .home-content .sales-boxes .box{
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+  }
+  .home-content .sales-boxes .top-sales{
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .overview-boxes .box{
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 700px) {
+  nav .sidebar-button .dashboard,
+  nav .profile-details .admin_name,
+  nav .profile-details i{
+    display: none;
+  }
+  .btncriar
+  {
+    text-align: center;
+  }
+  .home-section nav .profile-details{
+    height: 50px;
+    min-width: 40px;
+  }
+  .home-content .sales-boxes .sales-details{
+    width: 560px;
+  }
+}
+@media (max-width: 550px) {
+  
+
+  .overview-boxes .box{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .sidebar.active ~ .home-section nav .profile-details{
+    display: none;
+  }
+}
+  @media (max-width: 400px) {
+  .sidebar{
+    width: 0;
+  }
+  .sidebar.active{
+    width: 60px;
+  }
+  .home-section{
+    width: 100%;
+    left: 0;
+  }
+  .sidebar.active ~ .home-section{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  .home-section nav{
+    width: 100%;
+    left: 0;
+  }
+  .sidebar.active ~ .home-section nav{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+}
