@@ -1,5 +1,5 @@
 <?php
-include 'Cadastro.php';
+include '../Dao/Cadastro.php';
 
 class User extends Cadastro{
 

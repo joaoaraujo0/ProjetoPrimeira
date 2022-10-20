@@ -1,14 +1,42 @@
 <?php
-    require_once('../Controllers/clientsController.php');
+session_start();
 
-    $controller=new clientsController();
+if(isset($_SESSION['id_cientista']))
+{
 
-    $action=!empty($_GET['a'])?$_GET['a']:'getAll';
+  echo "usuario existe";
+}
+else
+{
+  echo "usuario nao existe";
+  // header("Location : LoginCadastro.php");
+  // session_destroy();
+}
+  require_once('../Controllers/clientsController.php');
 
-    $controller->{$action}();
+  $controller=new clientsController();
 
-    $resultData = $_SESSION['var'];
+  $action=!empty($_GET['a'])?$_GET['a']:'getAll';
+
+  $controller->{$action}();
+
+  $resultData = $_SESSION['var'];
+
+
+
+// if($_SESSION['cpf'] != null)
+// {
+    
+//     echo ("entrou");exit;
+//   }
+//   else
+//   {
+//     echo ("nao entrou");exit;
+//   }
+
+    
 ?>
+
 <!DOCTYPE php>
 <php lang="en">
   <head>
@@ -96,6 +124,7 @@
     </nav>
     <!-- top navigation bar -->
     <!-- offcanvas -->
+ 
     <div
       class="offcanvas offcanvas-start sidebar-nav bg-dark"
       tabindex="-1"

@@ -1,6 +1,6 @@
 <?php
    
-    require_once "../Models/Client.php";
+    require_once "../Dao/Client.php";
     include '../Controllers/IClientsController.php';
 
     class ClientsController 

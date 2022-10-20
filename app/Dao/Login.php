@@ -23,14 +23,15 @@ require_once '../Conection/Conn.php';
 
             if($sql->rowCount() > 0)
             { 
-                $pdo = null;
-                return true; /* cadastrado c/ sucesso */
+                // Salva os dados encontrados na sessão
+                session_start();
+                $_SESSION['id_cientista'] = true;
+                //return true; /* cadastrado c/ sucesso */
             }
             else
             {
                 $pdo = null;
                 return false; /* n conseguiu logar */
-               
             }
         }
     }

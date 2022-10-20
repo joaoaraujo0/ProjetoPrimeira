@@ -1,3 +1,15 @@
+<?php
+
+  if(isset($_SESSION['cpf']) && $_SESSION['cpf'] == $cpf_cientista)
+  {
+    echo ("entrou");exit;
+  }
+  else
+  {
+    echo ("nao entrou");exit;
+  }
+?>
+
 <!DOCTYPE html>
 <html>
   <head>

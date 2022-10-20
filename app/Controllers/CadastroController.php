@@ -1,6 +1,6 @@
 <?php
 include '../Models/User.php';
-include '../Models/Login.php';
+include '../Dao/Login.php';
 include '../Models/Pub.php';
 include '../Controllers/IClientsController.php';
 include '../Controllers/Printar.php';
@@ -8,14 +8,15 @@ include '../Controllers/Printar.php';
 class CadastroController implements clients{
   
   function Cadastro(){
-    $nom_cientista = $_POST["nom_cientista"];
-    $cpf_cientista = $_POST["cpf_cientista"];
-    $dtn_cientista = $_POST["dtn_cientista"];
-    $email_cientista = $_POST["email_cientista"];
-    $email_alternativo_cientista = $_POST["email_alternativo_cientista"];
-    $lattes_cientista = $_POST["lattes_cientista"];
-    $snh_cientista = $_POST["snh_cientista"];
-  
+    $nom_cientista =addslashes( $_POST["nom_cientista"]);
+    $cpf_cientista =addslashes( $_POST["cpf_cientista"]);
+    $dtn_cientista =addslashes( $_POST["dtn_cientista"]);
+    $email_cientista =addslashes( $_POST["email_cientista"]);
+    $email_alternativo_cientista =addslashes( $_POST["email_alternativo_cientista"]);
+    $lattes_cientista =addslashes( $_POST["lattes_cientista"]);
+    $snh_cientista = mb_strimwidth(md5(addslashes($_POST['snh_cientista'])), 0, 10);
+    
+
     $user = new User($nom_cientista, $cpf_cientista, $dtn_cientista
     ,$email_cientista, $email_alternativo_cientista, $lattes_cientista, $snh_cientista  );
   
@@ -29,18 +30,14 @@ class CadastroController implements clients{
       $b1->printarErro();
 
     }
-
-
-    
-
-    
   }
+
   
   function Login()
   {
     if (isset($_POST['cpf_cientista'])){
       $nom_cientista = $_POST["cpf_cientista"];
-      $snh_cientista = $_POST["snh_cientista"];
+      $snh_cientista = mb_strimwidth(md5(addslashes($_POST['snh_cientista'])), 0, 10);
 
       $log=new Login();
 

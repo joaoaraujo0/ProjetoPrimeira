@@ -28,10 +28,8 @@
             try 
             {
                 $this->pdo = new PDO('mysql:host='.HOST.';dbname='.DATABASENAME,USER,PASSWORD);
-                echo ("banco conectado");
             } catch (PDOException $e) 
             {
-                echo ("banco nao conectado");
                 $msgErro = $e->getMessage();
             }
         }

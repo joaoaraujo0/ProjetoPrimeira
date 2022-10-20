@@ -1,3 +1,12 @@
+<?php
+	
+    // if(!isset($_SESSION['id_cientista']))
+    // {
+    //     header("Location: LoginCadastro.php");
+    //     exit;
+    // }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

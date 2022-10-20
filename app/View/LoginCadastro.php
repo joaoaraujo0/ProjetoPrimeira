@@ -108,12 +108,12 @@
                 </div>
                 
                 <div class="input-wrap1">
-                  <input type="password" name="snh_cientista" class="input-field" autocomplete="off" required/>
+                  <input type="password" name="snh_cientista" class="input-field" required  id="password"/>
                   <label>Senha</label>
                 </div>
           
                 <div class="input-wrap1">
-                  <input type="password" name="confirmarSenha" class="input-field" autocomplete="off" required/>
+                  <input type="password" name="confirmarSenha" class="input-field" required  id="confirm_password" />
                   <label>Confirmar Senha</label>
                 </div>
            
@@ -155,7 +155,7 @@
     </main>
 
     <!-- Javascript file -->
-   
+    <script src="./script/verifica.js" ></script>
     <script src="./script/app.js"></script>
   </body>
   

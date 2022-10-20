@@ -1,5 +1,5 @@
 <?php
-include 'CadastraPub.php';
+include '../Dao/CadastraPub.php';
 
 
 class Pub extends CadastraPub{

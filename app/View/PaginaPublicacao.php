@@ -6,6 +6,12 @@
     $action = !empty($_GET['a']) ? $_GET['a'] : 'getAll';
 
     $controller->{$action}();
+
+    if(!isset($_SESSION['id_cientista']))
+    {
+      header("Location: LoginCadastro.php");
+      exit;
+    }
 ?>
 
 <!DOCTYPE html>

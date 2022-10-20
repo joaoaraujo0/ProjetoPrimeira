@@ -18,15 +18,17 @@ require_once '../Conection/Conn.php';
 
             $sql = $pdo->prepare("SELECT *FROM cientista
 
-                WHERE cpf_cientista = :b");
+            WHERE cpf_cientista = :b");
             $sql->bindValue(":b", $cpf_cientista);
             $sql->execute();
 
             //veficar se já esta cadastrado, contando as linhas
             if($sql->rowCount() > 0)
             {
-                
-                echo "<script type='javascript'>alert('Usuario já!');";
+                echo "<SCRIPT> //not showing me this
+                alert('CPF ja cadastrado')
+                window.location.replace('../../app/View/LoginCadastro.php');
+            </SCRIPT>";
             }
             else
             {
